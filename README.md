@@ -35,13 +35,13 @@ Pull the docker image from DockerHub:
 
 
 Run the docker image
+
 *$ docker run -p {yourportumber}:8080 -e RAPID_MYSQLCONNECTIONSTRING="{mysqlconnectionstring}" workmaze/rapid.mysql*
 
 ## Using the API
 
 
 Open the MySql work-bench to create the following table:-
-
 
 
 *CREATE TABLE `user` (`idUser` int(11) NOT NULL AUTO_INCREMENT,  
@@ -72,29 +72,19 @@ Body : Array of JSON objects corresponding to the table schema.
 "Age" : "30",
 "Name" : "Simon",
 "Language" : "Welsh"
-},*
-
-
-*
+},
 {
 "Country" : "Sweden",
 "Age" : "30",
 "Name" : "Philip",
 "Language" : "Swedish"
 },
-*
-
-
-*
 {
 "Country" : "Norway",
 "Age" : "40",
 "Name" : "Ola",
 "Language" : "Norsk"
-},*
-
-
-*
+},
 {
 "Country" : "Finland",
 "Age" : "25",
@@ -119,11 +109,10 @@ Body : JSON object corresponding to the fields to update.
 *PUT http://192.168.99.100:80/api/table/user?name=Simon&country=uk*
 
 
-*
-{
+*{
 "Country" : "Wales",
 "Age" : "35"
-"Language" : "English"
+Language" : "English"
 }*
 
 
@@ -167,10 +156,7 @@ Body : JSON object containing the result from the query.
 "Age" : "40",
 "Name" : "Ola",
 "Language" : "Norsk"
-},*
-
-
-*
+},
 {
 "Country" : "Finland",
 "Age" : "25",
