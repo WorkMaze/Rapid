@@ -30,16 +30,12 @@ Install docker Quickstart Terminal on your machine. Open Quickstart Terminal.
 
 Pull the docker image from DockerHub:
 
-**
-$ docker pull workmaze/rapid.mysql**
+*$ docker pull workmaze/rapid.mysql*
 
 
 
 Run the docker image
-**
-$ docker run -p {yourportumber}:8080 -e RAPID_MYSQLCONNECTIONSTRING="{mysqlconnectionstring}" workmaze/rapid.mysql
-
-**
+*$ docker run -p {yourportumber}:8080 -e RAPID_MYSQLCONNECTIONSTRING="{mysqlconnectionstring}" workmaze/rapid.mysql*
 
 ## Using the API
 
@@ -48,19 +44,12 @@ Open the MySql work-bench to create the following table:-
 
 
 
-*CREATE TABLE `user` (
-  `idUser` int(11) NOT NULL AUTO_INCREMENT,
-  
-`Name` varchar(45) DEFAULT NULL,
-  
-`Country` varchar(45) DEFAULT NULL,
- 
-`Language` varchar(45) DEFAULT NULL,
- 
-`Age` int(11) DEFAULT NULL,
-  
-`MoreInfo` json DEFAULT NULL,
-  
+*CREATE TABLE `user` (`idUser` int(11) NOT NULL AUTO_INCREMENT,  
+`Name` varchar(45) DEFAULT NULL,  
+`Country` varchar(45) DEFAULT NULL, 
+`Language` varchar(45) DEFAULT NULL, 
+`Age` int(11) DEFAULT NULL,  
+`MoreInfo` json DEFAULT NULL,  
 PRIMARY KEY (`idUser`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;*
 
@@ -75,28 +64,37 @@ Body : Array of JSON objects corresponding to the table schema.
 
 
 
-*POST http://192.168.99.100:80/api/table/user
+*POST http://192.168.99.100:80/api/table/user*
 
-[{
+
+*[{
 "Country" : "UK",
 "Age" : "30",
 "Name" : "Simon",
 "Language" : "Welsh"
-},
+},*
 
+
+*
 {
 "Country" : "Sweden",
 "Age" : "30",
 "Name" : "Philip",
 "Language" : "Swedish"
 },
+*
 
+
+*
 {
 "Country" : "Norway",
 "Age" : "40",
 "Name" : "Ola",
 "Language" : "Norsk"
-},
+},*
+
+
+*
 {
 "Country" : "Finland",
 "Age" : "25",
@@ -118,8 +116,10 @@ Body : JSON object corresponding to the fields to update.
 
 
 
-*PUT http://192.168.99.100:80/api/table/user?name=Simon&country=uk
+*PUT http://192.168.99.100:80/api/table/user?name=Simon&country=uk*
 
+
+*
 {
 "Country" : "Wales",
 "Age" : "35"
@@ -167,7 +167,10 @@ Body : JSON object containing the result from the query.
 "Age" : "40",
 "Name" : "Ola",
 "Language" : "Norsk"
-},
+},*
+
+
+*
 {
 "Country" : "Finland",
 "Age" : "25",
@@ -181,4 +184,5 @@ Body : JSON object containing the result from the query.
 
 
 1. Add RAPID to support other RDS like SQL Server.
+
 2. Add RAPID to support NoSql databases like DynamoDB, MongoDB, Cassandra.
