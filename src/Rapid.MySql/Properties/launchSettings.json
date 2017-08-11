@@ -1,0 +1,29 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:59790/",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "api/values",
+      "environmentVariables": {
+        "RAPID_MySqlConnectionString": "Server=localhost;Port=3306;Database=rapid;Uid=root;Pwd=xxxxxxxx",
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      }
+    },
+    "Rapid.MySql": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "RAPID_MySqlConnectionString": "Server=localhost;Port=3306;Database=rapid;Uid=root;Pwd=xxxxxxxx",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+   
+  }
+}

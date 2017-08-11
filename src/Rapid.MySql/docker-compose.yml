@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  rapid.mysql:
+    image: user/rapid.mysql${TAG}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80"
