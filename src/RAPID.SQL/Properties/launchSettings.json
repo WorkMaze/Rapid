@@ -1,0 +1,29 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:51008/",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "api/values"
+    },
+    "RAPID.SQL": {
+      "commandName": "Project",
+      "launchUrl": "http://localhost:5000/api/values",
+      "environmentVariables": {
+        "RAPID_SqlConnectionString": "Server=XXXXX;Database=XXXX;Trusted_Connection=True;",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Docker": {
+      "launchBrowser": true,
+      "launchUrl": "http://localhost:{ServicePort}/api/values"
+    }
+  }
+}
