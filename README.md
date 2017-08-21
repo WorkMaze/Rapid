@@ -3,9 +3,9 @@
 
 RAPID stands for REST API for Database. 
 
-This article focussed on MySql database. 
+I have created docker images which have been uploaded to DockerHub. 
 
-I have created a docker image which has been uploaded to DockerHub. This image provides a RESTful API to any MySql database. 
+These image provide a RESTful API to SQL and MySql databases. 
 
 
 The following operations are supported:-
@@ -25,18 +25,21 @@ The following operations are supported:-
 
 
 
+
 Install docker Quickstart Terminal on your machine. Open Quickstart Terminal.
 
 
 Pull the docker image from DockerHub:
 
 *$ docker pull workmaze/rapid.mysql*
-
+*$ docker pull workmaze/rapid.sql*
 
 
 Run the docker image
 
 *$ docker run -p {yourportumber}:8080 -e RAPID_MYSQLCONNECTIONSTRING="{mysqlconnectionstring}" workmaze/rapid.mysql*
+
+*$ docker run -p {yourportumber}:8080 -e RAPID_SQLCONNECTIONSTRING="{sqlconnectionstring}" workmaze/rapid.sql*
 
 ## Using the API
 
@@ -54,6 +57,17 @@ PRIMARY KEY (`idUser`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;*
 
 
+Open SQL Management Console to create the following table:-
+
+*CREATE TABLE [dbo].[User]
+(
+[idUser] [int] IDENTITY(1,1) NOT NULL,
+[Name] nvarchar NULL,
+[Country] nvarchar NULL,
+[Language] nvarchar NULL,
+[Age] [int] NULL,
+[MoreInfo] [xml] NULL
+)*
 
 ## Add records to a table
 
@@ -166,9 +180,4 @@ Body : JSON object containing the result from the query.
 
 
 
-## Future plans
 
-
-1. Add RAPID to support other RDS like SQL Server.
-
-2. Add RAPID to support NoSql databases like DynamoDB, MongoDB, Cassandra.
