@@ -69,10 +69,10 @@ Open SQL Management Console to create the following table:-
 [MoreInfo] [xml] NULL
 )*
 
-## Add records to a table
+a## Add records to a table
 
 
-POST {url}/api/{tablename}
+POST {url}/api/table/{tablename}
 
 Body : Array of JSON objects corresponding to the table schema.
 
@@ -115,7 +115,7 @@ Returns 204
 ## Update existing records in a table
 
 
-PUT {url}/api/{tablename}?{conditions}
+PUT {url}/api/table/{tablename}?{conditions}
 Body : JSON object corresponding to the fields to update.
 
 
@@ -138,7 +138,7 @@ Returns 204
 ## Delete records from a table
 
 
-DELETE {url}/api/{tablename}?{conditions}
+DELETE {url}/api/table/{tablename}?{conditions}
 
 
 
@@ -154,7 +154,7 @@ Returns 204
 
 
 
-GET {url}/api/{tablename}?{conditions}
+GET {url}/api/table/{tablename}?{conditions}
 
 *GET http://192.168.99.100:80/api/table/user?name=Ola*
 
@@ -177,7 +177,6 @@ Body : JSON object containing the result from the query.
 "Name" : "Ola",
 "Language" : "Finnish"
 }]*
-
 
 
 
