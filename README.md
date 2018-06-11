@@ -3,9 +3,9 @@
 
 RAPID stands for REST API for Database. 
 
-This article focussed on MySql database. 
+I have created docker images which have been uploaded to DockerHub. 
 
-I have created a docker image which has been uploaded to DockerHub. This image provides a RESTful API to any MySql database. 
+These image provide a RESTful API to SQL and MySql databases. 
 
 
 The following operations are supported:-
@@ -25,18 +25,21 @@ The following operations are supported:-
 
 
 
+
 Install docker Quickstart Terminal on your machine. Open Quickstart Terminal.
 
 
 Pull the docker image from DockerHub:
 
 *$ docker pull workmaze/rapid.mysql*
-
+*$ docker pull workmaze/rapid.sql*
 
 
 Run the docker image
 
 *$ docker run -p {yourportumber}:8080 -e RAPID_MYSQLCONNECTIONSTRING="{mysqlconnectionstring}" workmaze/rapid.mysql*
+
+*$ docker run -p {yourportumber}:8080 -e RAPID_SQLCONNECTIONSTRING="{sqlconnectionstring}" workmaze/rapid.sql*
 
 ## Using the API
 
@@ -54,11 +57,22 @@ PRIMARY KEY (`idUser`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;*
 
 
+Open SQL Management Console to create the following table:-
 
-## Add records to a table
+*CREATE TABLE [dbo].[User]
+(
+[idUser] [int] IDENTITY(1,1) NOT NULL,
+[Name] nvarchar NULL,
+[Country] nvarchar NULL,
+[Language] nvarchar NULL,
+[Age] [int] NULL,
+[MoreInfo] [xml] NULL
+)*
+
+a## Add records to a table
 
 
-POST {url}/api/{tablename}
+POST {url}/api/table/{tablename}
 
 Body : Array of JSON objects corresponding to the table schema.
 
@@ -101,7 +115,7 @@ Returns 204
 ## Update existing records in a table
 
 
-PUT {url}/api/{tablename}?{conditions}
+PUT {url}/api/table/{tablename}?{conditions}
 Body : JSON object corresponding to the fields to update.
 
 
@@ -124,7 +138,7 @@ Returns 204
 ## Delete records from a table
 
 
-DELETE {url}/api/{tablename}?{conditions}
+DELETE {url}/api/table/{tablename}?{conditions}
 
 
 
@@ -140,7 +154,7 @@ Returns 204
 
 
 
-GET {url}/api/{tablename}?{conditions}
+GET {url}/api/table/{tablename}?{conditions}
 
 *GET http://192.168.99.100:80/api/table/user?name=Ola*
 
@@ -166,9 +180,3 @@ Body : JSON object containing the result from the query.
 
 
 
-## Future plans
-
-
-1. Add RAPID to support other RDS like SQL Server.
-
-2. Add RAPID to support NoSql databases like DynamoDB, MongoDB, Cassandra.
