@@ -17,7 +17,7 @@
       "commandName": "Project",
       "launchUrl": "http://localhost:5000/api/values",
       "environmentVariables": {
-        "RAPID_SqlConnectionString": "Server=XXXXX;Database=XXXX;Trusted_Connection=True;",
+        "RAPID_SqlConnectionString": "Server=LAPTOP-2ODIG01N\\SQLEXPRESS01;Database=WorkflowEngine;Trusted_Connection=True;",
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },

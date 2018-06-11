@@ -1,18 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F976691B-4008-4A76-960A-E99A821AB81D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3C23E2F0-0902-4E0E-9C2C-BE376FABFCBF}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Rapid.MySql", "src\Rapid.MySql\Rapid.MySql.xproj", "{83506B6D-7787-4AAD-91A6-3B427DCCE106}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rapid.MySql", "src\Rapid.MySql\Rapid.MySql.csproj", "{83506B6D-7787-4AAD-91A6-3B427DCCE106}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "RAPID.SQL", "src\RAPID.SQL\RAPID.SQL.xproj", "{C1DA1093-1F01-4070-83D9-E70ADFE49476}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RAPID.SQL", "src\RAPID.SQL\RAPID.SQL.csproj", "{C1DA1093-1F01-4070-83D9-E70ADFE49476}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,5 +32,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{83506B6D-7787-4AAD-91A6-3B427DCCE106} = {F976691B-4008-4A76-960A-E99A821AB81D}
 		{C1DA1093-1F01-4070-83D9-E70ADFE49476} = {F976691B-4008-4A76-960A-E99A821AB81D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29CF81C4-4887-4FEC-98D7-93A6C976875C}
 	EndGlobalSection
 EndGlobal
